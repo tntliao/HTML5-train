@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style type="text/css">
+			#wrap {
+				width: 250px;
+				height: 250px;
+				background: pink;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				margin: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+
+		</div>
+		<script type="text/javascript">
+			var wrap = document.getElementById('wrap');
+			if (wrap.addEventListener) {
+				//火狐
+				wrap.addEventListener('DOMMouseScroll', function() {
+					console.log('我在火狐浏览器滚动鼠标');
+				})
+			} else {
+				//非火狐
+				wrap.onmousewheel = function() {
+					console.log('我在滚动鼠标');
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html style="margin: 50px;">
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* 
+				document.documentElement.clientWidth
+					并不是根标签的可视区域,就是视口的大小
+			 */
+			var w = document.documentElement.clientWidth;
+			console.log(w);
+			/* 
+				document.documentElement.offsetWidth
+					根标签border-box
+			 */
+			var w2 = document.documentElement.offsetWidth;
+			console.log(w2);
+
+			/* 
+				##注意##
+					在ie10及ie10以下,跟标签的clientWidth和offsetWidth
+						统一被指定为视口的宽度
+			 */
+		</script>
+	</body>
+</html>

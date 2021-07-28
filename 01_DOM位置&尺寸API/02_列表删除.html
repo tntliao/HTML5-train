@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1<a href="javascript:;">删除</a></li>
+        <li>12<a href="javascript:;">删除</a></li>
+        <li>123<a href="javascript:;">删除</a></li>
+        <li>12345<a href="javascript:;">删除</a></li>
+        <li>123456<a href="javascript:;">删除</a></li>
+    </ul>
+</body>
+<script>
+    var aNodes = document.getElementsByTagName('a');
+    for (var i = 0; i < aNodes.length; i++) {
+           aNodes[i].onclick = function () {
+               /* 
+                假删除
+                
+                */
+               this.parentNode.style.display = 'none';
+           }
+
+        /* 闭包写法 */
+        /* (function (i) {
+            aNodes[i].onclick = function () {
+                aNodes[i].parentNode.style.display = 'none';
+            }
+        })(i) */
+    }
+</script>
+
+</html>

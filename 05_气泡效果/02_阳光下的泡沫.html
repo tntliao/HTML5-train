@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: pink;
+        }
+
+        canvas {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="400" height="400"></canvas>
+</body>
+<script>
+    window.onload = function () {
+        var oc = document.getElementsByTagName('canvas')[0];
+        if (oc.getContext) {
+            var ctx = oc.getContext('2d');
+
+            var arr = [];
+            //往arr中注入随机圆的信息
+            setInterval(function () {
+                //random() 方法可返回介于 0 ~ 1 之间的一个随机数
+                var x = Math.random() * oc.width;
+                var y = Math.random() * oc.height;
+                var r = 10;
+                //把数四舍五入为最接近的整数
+                var red = Math.round(Math.random() * 255);
+                var green = Math.round(Math.random() * 255);
+                var blue = Math.round(Math.random() * 255);
+                var alp = 1;
+
+                arr.push({
+                    x: x,
+                    y: y,
+                    r: r,
+                    red: red,
+                    green: green,
+                    blue: blue,
+                    alp: alp
+                })
+            }, 50)
+
+
+            //将数组中的圆绘制到画布中
+            setInterval(function () {
+                //清除画布
+                ctx.clearRect(0, 0, oc.width, oc.height);
+                //动画
+                for (var i = 0; i < arr.length; i++) {
+                    if (arr[i].alp <= 0) {
+                        //透明度等于0时候,删除第 i 项,删除数目 1
+                        arr.splice(i, 1);
+                    }
+                    //圆心大小
+                    arr[i].r++;
+                    arr[i].alp -= 0.01;
+                }
+                //绘制
+                for (var i = 0; i < arr.length; i++) {
+                    ctx.save();
+                    ctx.fillStyle = "rgba(" + arr[i].red + "," + arr[i].green + "," + arr[i].blue + "," + arr[i].alp + ")";
+                    ctx.beginPath();
+                    ctx.arc(arr[i].x, arr[i].y, arr[i].r, 0, 2 * Math.PI);
+                    ctx.fill();
+                    ctx.restore();
+                }
+                console.log(arr);
+            }, 1000 / 60)
+        }
+    }
+</script>
+
+</html>

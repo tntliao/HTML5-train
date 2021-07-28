@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>mac停靠栏</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			html,
+			body {
+				height: 100%;
+				overflow: hidden;
+			}
+
+			.wrap {
+				position: absolute;
+				bottom: 10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			img {
+				width: 64px;
+				/* transition: .3s; */
+			}
+
+			/* 			img:hover {
+				width: 128px;
+			} */
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<img src="images/1.png">
+			<img src="images/2.png">
+			<img src="images/3.png">
+			<img src="images/4.png">
+			<img src="images/5.png">
+		</div>
+		<script type="text/javascript">
+			var r = 320;
+			var imgNodes = document.getElementsByTagName('img');
+
+			document.onmousemove = function(ev) {
+				ev = ev || event;
+				for (var i = 0; i < imgNodes.length; i++) {
+						var a = imgNodes[i].getBoundingClientRect().left + imgNodes[i].offsetWidth / 2 - ev.clientX;
+						var b = imgNodes[i].getBoundingClientRect().top + imgNodes[i].offsetHeight / 2 - ev.clientY;
+					/* 
+						靠的越近平方根值越小 乘于0.2值也越小 128-值=当前图像大小
+					 */
+					var c = Math.sqrt(a * a + b * b);
+					/* 
+						Math.sqrt 开平方
+							64  8
+							16  4
+							9   3
+					 */
+					if (c >= r) {
+						// c = r; //r = 320
+						/* 
+							这步是平方根大于320,让c等于320,就是为了到范围内图像才有变化
+						 */
+					}
+					imgNodes[i].style.width = 128 - c * 0.2 + 'px';
+				}
+				console.log(imgNodes[0].getBoundingClientRect());
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+    <style>
+        /*common css 开始*/
+        .clearfix {
+            *zoom: 1;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        /*common css 结束*/
+    </style>
+</head>
+
+<body>
+    <section id="wrap">
+        <!-- 流体布局 -->
+        <header id="head">
+            <!-- 固定布局 -->
+            <div class="headMain">
+                <h1 class="logo">
+                    <a href="javascript:;">
+                        <img src="./img/logo.png" alt="">
+                    </a>
+                </h1>
+                <nav class="nav">
+                    <ul class="list clearfix">
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up"><img id="nana" src="./img/home_gruen.png" alt="" srcset=""></div>
+                                <div class="down"><img src="./img/home.png" alt="" srcset=""></div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">Course</div>
+                                <div class="down">Course</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">Works</div>
+                                <div class="down">Works</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">About</div>
+                                <div class="down">About</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="up">Team</div>
+                                <div class="down">Team</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="arrow"></div>
+            </div>
+        </header>
+        <section id="content"></section>
+    </section>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

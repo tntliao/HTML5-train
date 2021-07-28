@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #test {
+            position: absolute;
+            left: 200px;
+            top: 300px;
+            width: 10px;
+            height: 10px;
+            background: black;
+        }
+
+        .box1 {
+            position: absolute;
+            border: 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="test"></div>
+</body>
+<script>
+    var testNode = document.getElementById('test');
+    var starX = testNode.offsetLeft;
+    var starY = testNode.offsetTop;
+    //角度
+    var deg = 0;
+    //倍数
+    var stepX = 50;
+    var stepY = 200;
+    setInterval(function () {
+        deg++;
+
+        //Math.PI = 3.14 = 180°
+        testNode.style.left = starX + (deg * Math.PI / 180) * stepX + 'px';
+        testNode.style.top = starY + Math.sin(deg * Math.PI / 180) * stepY + 'px';
+
+        //创建div节点
+        var boxNode = document.createElement('div');
+        //添加class
+        boxNode.classList.add('box1');
+        boxNode.style.left = testNode.offsetLeft + 'px';
+        boxNode.style.top = testNode.offsetTop + 'px';
+        //添加到body的子元素
+        document.body.appendChild(boxNode);
+    }, 1000 / 60)
+</script>
+
+</html>

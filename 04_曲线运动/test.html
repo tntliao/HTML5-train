@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
+		.box1 {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			left: 110px;
+			background: red;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box1"></div>
+	<button>按钮</button>
+</body>
+<script>
+	var testNode = document.getElementsByClassName('box1')[0];
+	var btn = document.getElementsByTagName('button')[0];
+	var starX = testNode.offsetLeft;
+	var starY = testNode.offsetTop;
+	var deg = 1;
+
+	btn.onclick = function () {
+		deg++;
+		testNode.style.left = starX + (deg * Math.PI / 180) * 50 + 'px';
+		console.log(Math.sin(deg * Math.PI / 180) * 100);
+		testNode.style.top = starY + Math.sin(deg * Math.PI / 180) * 100 + 'px';
+	}
+
+
+</script>
+
+</html>

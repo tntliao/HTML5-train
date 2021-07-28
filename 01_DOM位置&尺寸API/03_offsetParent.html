@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            position: absolute;
+        }
+
+        #inner1 {
+            position: fixed;
+        }
+
+        #inner2 {
+            position: relative;
+        }
+
+        #inner3 {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">wrap
+        <div id="inner1">inner1
+            <div id="inner2">inner2
+                <div id="inner3"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        /* 
+            ev||event
+            鼠标滚轮
+            事件绑定
+            offsetParent
+                1.父级是否有定位(4种)
+                    absolute relative fixed static
+                2.本身是否有定位(4种)
+            
+            本事定位为fixed
+                ==> offsetParent:null(不是火狐)
+                ==> offsetParent:body(火狐)
+
+            本身定位不为fixed
+                父级没有定位
+                    ==> offsetParent:body
+                父级有定位
+                    ==> offsetParent:定位父级
+         */
+        const inner3 = document.getElementById('inner3')
+        console.log(inner3.offsetParent);
+    </script>
+</body>
+
+</html>

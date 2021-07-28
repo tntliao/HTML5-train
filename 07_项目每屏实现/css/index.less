@@ -1,0 +1,326 @@
+#head {
+    background: white !important;
+
+    .headMain {
+        width   : 1100px;
+        height  : 80px;
+        margin  : 0 auto;
+        position: relative;
+
+        &>.logo {
+            float     : left;
+            margin-top: 30px;
+        }
+
+        &>.nav {
+            float     : right;
+            margin-top: 50px;
+
+            &>.list {
+                &>li {
+                    float      : left;
+                    margin-left: 40px;
+                    position   : relative;
+
+                    .up {
+                        color     : #000000;
+                        position  : absolute;
+                        width     : 0;
+                        overflow  : hidden;
+                        transition: 1s width;
+                    }
+
+                    &:hover .up {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        &>.arrow {
+            width     : 21px;
+            height    : 11px;
+            background: url(../img/menuIndicator.png);
+            position  : absolute;
+            left      : 50%;
+            bottom    : -11px;
+            transition: 1s left;
+            z-index   : 9999;
+        }
+    }
+}
+
+#content {
+    background: gray;
+    position  : relative;
+    overflow  : hidden;
+    width     : 100%;
+
+    .list {
+        position  : absolute;
+        width     : 100%;
+        top       : 0;
+        transition: 1s top;
+
+        &>li {
+            position           : relative;
+            background-position: 50% 50% !important;
+
+            &>div {
+                width   : 1100px;
+                height  : 520px;
+                position: absolute;
+                left    : 0;
+                right   : 0;
+                top     : 0;
+                bottom  : 0;
+                margin  : auto;
+            }
+        }
+
+        &>.home {
+            background: url(../img/bg1.jpg) no-repeat;
+        }
+
+        &>.course {
+            background: url(../img/bg2.jpg) no-repeat;
+
+            .course1 {
+                margin: 50px;
+            }
+
+            .course2 {
+                margin-left: 50px;
+                width      : 400px;
+            }
+
+            .course3 {
+                width   : 480px;
+                position: absolute;
+                right   : 50px;
+                top     : 70px;
+
+                .line {
+                    position  : absolute;
+                    top       : -7px;
+                    width     : 9px;
+                    height    : 410px;
+                    background: url(../img/plus_row.png) no-repeat;
+
+                    &:nth-child(1) {
+                        left: -5px;
+                    }
+
+                    &:nth-child(2) {
+                        left: 115px;
+                    }
+
+                    &:nth-child(3) {
+                        left: 235px;
+                    }
+
+                    &:nth-child(4) {
+                        left: 355px;
+                    }
+
+                    &:nth-child(5) {
+                        left: 475px;
+                    }
+                }
+
+                .item {
+                    float          : left;
+                    width          : 120px;
+                    height         : 132px;
+                    position       : relative;
+                    perspective    : 500px; //义 3D 元素距视图的距离
+                    transform-style: preserve-3d; //子元素将保留其 3D 位置
+
+                    .face {
+                        position  : absolute;
+                        left      : 0;
+                        top       : 0;
+                        width     : 100%;
+                        height    : 100%;
+                        box-sizing: border-box;
+                        padding   : 15px;
+                        transition: 1s transform;
+
+                        transform          : rotateY(180deg);
+                        backface-visibility: hidden; //隐藏div元素的背面
+                        background         : #009ee0;
+                        color              : white;
+                    }
+
+                    .backFace {
+                        position           : absolute;
+                        left               : 0;
+                        top                : 0;
+                        width              : 100%;
+                        height             : 100%;
+                        box-sizing         : border-box;
+                        padding            : 15px;
+                        transition         : 1s transform;
+                        background-position: 50% 50% !important;
+                    }
+
+                    &:nth-of-type(1) .backFace {
+                        background: url(../img/apcoa.png) no-repeat;
+                    }
+
+                    &:nth-of-type(2) .backFace {
+                        background: url(../img/apcoa.png) no-repeat;
+                    }
+
+                    &:nth-of-type(3) .backFace {
+                        background: url(../img/bks.png) no-repeat;
+                    }
+
+                    &:nth-of-type(4) .backFace {
+                        background: url(../img/gu.png) no-repeat;
+                    }
+
+                    &:nth-of-type(5) .backFace {
+                        background: url(../img/hlx.png) no-repeat;
+                    }
+
+                    &:nth-of-type(6) .backFace {
+                        background: url(../img/lbs.png) no-repeat;
+                    }
+
+                    &:nth-of-type(7) .backFace {
+                        background: url(../img/leonberg.png) no-repeat;
+                    }
+
+                    &:nth-of-type(8) .backFace {
+                        background: url(../img/pcwelt.png) no-repeat;
+                    }
+
+                    &:nth-of-type(9) .backFace {
+                        background: url(../img/tata.png) no-repeat;
+                    }
+
+                    &:nth-of-type(10) .backFace {
+                        background: url(../img/bks.png) no-repeat;
+                    }
+
+                    &:nth-of-type(11) .backFace {
+                        background: url(../img/bks.png) no-repeat;
+                    }
+
+                    &:nth-of-type(12) .backFace {
+                        background: url(../img/bks.png) no-repeat;
+                    }
+
+                    &:hover .face {
+                        transform: rotateY(360deg);
+                    }
+
+                    &:hover .backFace {
+                        transform: rotateY(180deg);
+                    }
+                }
+            }
+        }
+
+        &>.works {
+            background: url(../img/bg4.jpg) no-repeat;
+
+            .works1 {
+                margin: 50px 0px 100px 50px;
+            }
+
+            .works2 {
+                margin-left: 50px;
+
+                &>.item {
+                    float   : left;
+                    width   : 220px;
+                    height  : 133px;
+                    margin  : 0 1px;
+                    position: relative;
+                    overflow: hidden;
+
+                    &:last-child {
+                        width: 332px;
+                    }
+
+                    .mask {
+                        position  : absolute;
+                        left      : 0;
+                        right     : 0;
+                        top       : 0;
+                        bottom    : 0;
+                        box-sizing: border-box;
+                        padding   : 10px;
+                        background: #000000;
+                        opacity   : 0;
+                        color     : white;
+                        transition: 1s opacity;
+
+                        .icon {
+                            width     : 32px;
+                            height    : 34px;
+                            margin    : 0 auto;
+                            margin-top: 10px;
+                            background: url(../img/zoomico.png) no-repeat;
+                            transition: .6s background-position;
+
+                            &:hover {
+                                background-position-y: -35px;
+                            }
+                        }
+                    }
+
+                    img {
+                        transition: 1s transform;
+                    }
+
+                    &:hover .mask {
+                        opacity: .8;
+                    }
+
+                    &:hover img {
+                        transform: rotate(30deg) scale(1.5);
+                    }
+                }
+            }
+
+            .works3 {
+                width     : 167px;
+                height    : 191px;
+                background: url(../img/robot.png) no-repeat;
+                position  : absolute;
+                left      : 900px;
+                top       : 170px;
+                animation : workesMove 4.5s linear infinite;
+            }
+        }
+
+        &>.about {
+            background: url(../img/bg3.jpg) no-repeat;
+        }
+
+        &>.team {
+            background: url(../img/bg5.jpg) no-repeat;
+        }
+    }
+}
+
+@keyframes workesMove {
+    0% {
+        transform: translateX(0px) rotateY(0deg);
+    }
+
+    49% {
+        transform: translateX(-499px) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateX(-500px) rotateY(180deg);
+    }
+
+    100% {
+        transform: translateX(0px) rotateY(180deg);
+    }
+}
